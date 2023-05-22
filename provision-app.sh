@@ -13,7 +13,6 @@
 # Replace the line "# pass PHP scripts to FastCGI server" in the default nginx configuration file with "proxy_pass http://localhost:3000/posts;"
 sudo sed -i "s/# pass PHP scripts to FastCGI server/location \/posts {\n\t\tproxy_pass http:\/\/localhost:3000\/posts;\n\t}/" /etc/nginx/sites-available/default
 
-# Re-start and enable the nginx web server
 sudo systemctl restart nginx
 sudo systemctl enable nginx
 
@@ -29,6 +28,7 @@ git clone https://github.com/JamieGodwin/app.git
 
 # Install the app
 cd ~/app
+cd app
 
 sudo npm install
 
@@ -38,3 +38,5 @@ node seeds/seed.js
 # Restart or start the app
 pm2 start app.js --update-env
 pm2 restart app.js --update-env
+
+# Re-start and enable the nginx web server
