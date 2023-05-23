@@ -24,12 +24,11 @@ sudo apt-get install nodejs -y
 sudo npm install pm2 -g
 
 # Get repo with the app folder
-git clone https://github.com/JamieGodwin/app.git /home/ubuntu
+git clone https://github.com/JamieGodwin/app.git /home/ubuntu/repo
 
 # Install the app
+cd /home/ubuntu/repo/app
 
-cd ~/app
-cd app
 
 sudo npm install
 
