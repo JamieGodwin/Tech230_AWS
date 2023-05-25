@@ -1,3 +1,5 @@
+![](2.2.png)
+Amazon Cloud watch is a repository for metrics, which lets users see key stats based on metrics chosen by the customer.
 ## 1. Instance
 - In order to set up a dashboard, we must first create an instance.
 - Ideally, we have something running in the instance to increase the CPU usage.
