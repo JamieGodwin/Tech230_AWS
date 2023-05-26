@@ -45,4 +45,4 @@
 - However, in order to connect to the mongo db database, we need the to use the private ip address of the mongo db server we launched.
 - We also need to allow public IP.
 - In security groups, we need access to port 22 to allow us to ssh in, and also to port 80 to allow HTTP access. 
-- Note: Ubuntu 20.04 should work well.
+- Note: Ubuntu 20.04 should work well, and we can't use existing security groups. 
