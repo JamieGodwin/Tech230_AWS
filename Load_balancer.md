@@ -37,6 +37,7 @@
 - After, we then select "Create new target group". Then we rename it.
 ![](1.7.png)
 - We then enable health checks.
+![](3.4.png)
 ### Page 4
 - We can then choose our capacities.
 
@@ -47,3 +48,7 @@
 - We can then select our key and value.
 - Here the key = "Name" and value = "tech230-jamie-nginx-HA-SC"
 - This should then be ready to launch. 
+
+## Load balancer
+- We can then access the page by going to theload balancer tab. 
+- There's a DNS name that will give us an ip address.
