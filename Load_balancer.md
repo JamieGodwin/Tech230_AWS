@@ -1,3 +1,5 @@
+![](3.2.png)
+
 ## Create an AMI
 - To create the load balancer for the nginx server, we first create an automated nginx instance.
 - We then turn this into an AMI.
