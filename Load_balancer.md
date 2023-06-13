@@ -1,22 +1,41 @@
+# Auto Scaling and load balancing
 ![](3.2.png)
 
 ## Create an AMI
-- To create the load balancer for the nginx server, we first create an automated nginx instance.
+- To create the load balancer for the app server, we first create an automated app instance.
 - We then turn this into an AMI.
 - The following can be pasted into the user data to do so:
-`#!/bin/bash`
+```
+ sudo apt-get update -y
+ sudo apt-get upgrade -y
 
- `# Update and upgrade nginx`
- `sudo apt-get update -y`
- `sudo apt-get upgrade -y`
+ sudo apt-get install nginx -y
 
-` # Install the web server nginx`
- `sudo apt-get install nginx -y`
- 
-`sudo systemctl restart nginx`
-`sudo systemctl enable nginx`
+ sudo sed -i "s/try_files \$uri \$uri\/ =404;/proxy_pass http:\/\/localhost:3000\/;/" /etc/nginx/sites-available/default
 
-## Create launch template
+sudo sed -i "s/# pass PHP scripts to FastCGI server/location \/posts {\n\t\tproxy_pass http:\/\/localhost:3000\/posts;\n\t}/" /etc/nginx/sites-available/default
+
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+sudo apt-get install nodejs -y
+sudo npm install pm2 -g
+
+git clone https://github.com/JamieGodwin/app.git /home/ubuntu/repo
+
+cd /home/ubuntu/repo/app
+
+sudo npm install
+
+node seeds/seed.js
+
+pm2 start app.js --update-env
+pm2 restart app.js --update-env
+```
+
+## Create the launch template
 - We can then click on the "launch template" tab.
 - In here we can select the AMI that we have just made.
 - We also need to select the instance type as "t2.micro".

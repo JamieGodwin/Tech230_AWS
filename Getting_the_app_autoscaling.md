@@ -42,3 +42,17 @@
 ## Auto scaling
 - We can then set up auto scaling with the previous steps. 
 - The launch template name I have used is "tech230-jamie-app-LT2"
+
+- code for nginx server:
+
+`#!/bin/bash`
+
+ `# Update and upgrade nginx`
+ `sudo apt-get update -y`
+ `sudo apt-get upgrade -y`
+
+` # Install the web server nginx`
+ `sudo apt-get install nginx -y`
+ 
+`sudo systemctl restart nginx`
+`sudo systemctl enable nginx`
