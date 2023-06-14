@@ -37,9 +37,10 @@ pm2 restart app.js --update-env
 
 ## Create the launch template
 - We can then click on the "launch template" tab.
+![](3.5.png)
 - In here we can select the AMI that we have just made.
 - We also need to select the instance type as "t2.micro".
-- It is then best practice to put the above code into the user data again. 
+- The security settings for HTTP and ssh access can then be added, along with the access key.
 ## Auto-scaling
 - We first go to "Auto Scaling Groups" and select "Create an Auto Scaling Group". 
 ### Page 1 
