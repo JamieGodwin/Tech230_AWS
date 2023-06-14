@@ -47,6 +47,7 @@ pm2 restart app.js --update-env
 - We are then able to select the launch template that we want to use.
 ### Page 2
 - On the VPC availabilty zones we select: 
+
 ![](1.5.png)
 ### Page 3
 - We then need to select "Attach to a new load balancer"
