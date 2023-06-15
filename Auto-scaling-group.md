@@ -73,3 +73,5 @@ pm2 restart app.js --update-env
 ## Load balancer
 - We can then access the page by going to theload balancer tab. 
 - There's a DNS name that will give us an ip address.
+
+![](3.9.png)
